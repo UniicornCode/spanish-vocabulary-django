@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocabulary</title>
+</head>
+<body>
+{% extends 'master-template.html' %}
+{% block content %}
+<div class="container py-4">
+        <div class="row">
+            <div class="col">
+                <h4 class="d-inline">Вокабулар</h4>
+                <a class="btn btn-primary btn-lg float-end mb-3" href="/quiz" style="background-color: #FA8072; border-color: #FA8072">
+                    Квиз
+                </a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-striped table-bordered">
+                <thead class="text-white" style="background-color: #FA8072;">
+                <tr>
+                    <th>Шпански</th>
+                    <th>Македонски</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for word in words %}
+                <tr>
+                    <td>{{ word.spanish }}</td>
+                    <td>{{ word.macedonian }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

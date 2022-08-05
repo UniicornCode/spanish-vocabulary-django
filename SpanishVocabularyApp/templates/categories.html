@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'master-template.html' %}
+{% block content %}
+<div class="container py-4">
+    <div class="display-3 fw-bold text-center mb-3">Категории</div>
+    <div class="row">
+        {% for category in categories %}
+        <div class="col col-12 col-md-4 col-lg-3 mb-3">
+            <a href="{% url 'vocabulary' category=category.url_name %}" class="card rounded rounded-3 shadow-sm text-decoration-none">
+                <div class="card-body">
+                    <div class="ratio ratio-1x1 mb-3">
+                        <img src="../../media/images/category_images/{{category.url_name}}.jpg" alt="category image"
+                             style="object-fit: cover;" class="img-fluid rounded rounded-3">
+                    </div>
+                    <div class="fs-5 text-center fw-bold text-dark">
+                        {{ category.name }}
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

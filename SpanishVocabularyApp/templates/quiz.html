@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'master-template.html' %}
+{% load custom_tags %}
+{% block content %}
+<div class="container">
+    <div class="mt-5">
+        <form action="" method="POST" enctype="multipart/form-data" id="quiz-form">
+            {% csrf_token %}
+            <div class="row">
+                {% for question, i in two_lists %}
+                <div class="col-4">
+                    <div class="card text-center m-3">
+                        <fieldset>
+                            <legend>{{question.spanish}}</legend>
+
+                            <div>
+                                <input type="radio"
+                                       id="{{question.spanish}}_{% multiple_args_tag request.session i 0 %}"
+                                       name="{{question.spanish}}" checked
+                                       value="{% multiple_args_tag request.session i 0 %}">
+                                <label for="{{question.spanish}}_{% multiple_args_tag request.session i 0 %}">
+                                    {% multiple_args_tag request.session i 0 %}</label>
+                            </div>
+                            <div>
+                                <input type="radio"
+                                       id="{{question.spanish}}_{% multiple_args_tag request.session i 1 %}"
+                                       name="{{question.spanish}}"
+                                       value="{% multiple_args_tag request.session i 1 %}">
+                                <label for="{{question.spanish}}_{% multiple_args_tag request.session i 1 %}">
+                                    {% multiple_args_tag request.session i 1 %}</label>
+                            </div>
+                            <div>
+                                <input type="radio"
+                                       id="{{question.spanish}}_{% multiple_args_tag request.session i 2 %}"
+                                       name="{{question.spanish}}"
+                                       value="{% multiple_args_tag request.session i 2 %}">
+                                <label for="{{question.spanish}}_{% multiple_args_tag request.session i 2 %}">
+                                    {% multiple_args_tag request.session i 2 %}</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div>
+                <button class="btn btn-primary btn-lg float-end my-3" type="submit"
+                        style="background-color: #FA8072; border-color: #FA8072">
+                    Провери
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

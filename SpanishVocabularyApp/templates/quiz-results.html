@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Results</title>
+</head>
+<body>
+{% extends 'master-template.html' %}
+{% block content %}
+<div class="container">
+    <div class="mt-5">
+        <div class="row">
+            {% for spanish, color, answers, correct in lists %}
+            <div class="col-4">
+                <div class="card text-center m-3">
+                    <fieldset style="background-color: {{color}};">
+                        <legend>{{spanish}}</legend>
+
+                        <div>
+                            <p>Вашиот одговор: {{answers}}</p>
+                            <p>Точниот одговор: {{correct}}</p>
+                        </div>
+
+                    </fieldset>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div>
+            <a class="btn btn-primary btn-lg float-end m-3" href="/categories"
+               style="background-color: #FA8072; border-color: #FA8072">
+                Одбери друга категорија
+            </a>
+            <a class="btn btn-primary btn-lg float-end my-3" href="/quiz"
+               style="background-color: #FA8072; border-color: #FA8072">
+                Повтори квиз
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
