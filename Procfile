@@ -1,1 +1,1 @@
-web: gunicorn spanish-vocabulary-django:app
+web: gunicorn SpanishVocabularyApp:app
