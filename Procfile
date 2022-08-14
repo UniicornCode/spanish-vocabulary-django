@@ -1,1 +1,1 @@
-web: gunicorn SpanishVocabularyApp.wsgi --log-file -
+web: gunicorn spanish-vocabulary-django.wsgi --log-file -
