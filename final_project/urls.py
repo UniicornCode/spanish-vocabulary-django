@@ -21,7 +21,7 @@ from final_project import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', home, name="home"),
+    path('', home, name="home"),
     path('home/', home, name="home"),
     path('categories/', categories, name="categories"),
     path('visit-spain/', visit_spain, name="visit-spain"),
