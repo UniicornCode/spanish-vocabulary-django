@@ -1,1 +1,1 @@
-web: gunicorn gettingstarted.wsgi
+web: gunicorn SpanishVocabularyApp.wsgi --log-file -
