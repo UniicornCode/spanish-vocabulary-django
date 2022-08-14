@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-)_+7wf65+h$yr$fs1)hsj9x4&nb%6+kwji^5!tp2$w!!z55fqb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'spanish-vocabulary-django.herokuapp.com',  # my herokuapp url
+    '127.0.0.1'
+]
 
 # Application definition
 
@@ -122,4 +126,5 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+
 
