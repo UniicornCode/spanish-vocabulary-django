@@ -1,1 +1,1 @@
-web: gunicorn SpanishVocabularyApp:app
+web: gunicorn gettingstarted.wsgi
