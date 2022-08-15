@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quiz Results</title>
+    <title>Резултати</title>
 </head>
 <body>
 {% extends 'master-template.html' %}
@@ -11,7 +11,7 @@
     <div class="mt-5">
         <div class="row">
             {% for spanish, color, answers, correct in lists %}
-            <div class="col-4">
+            <div class="col col-12 col-lg-4">
                 <div class="card text-center m-3">
                     <fieldset style="background-color: {{color}};">
                         <legend>{{spanish}}</legend>

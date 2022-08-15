@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Квиз</title>
 </head>
 <body>
 {% extends 'master-template.html' %}
@@ -14,7 +14,7 @@
             {% csrf_token %}
             <div class="row">
                 {% for question, i in two_lists %}
-                <div class="col-4">
+                <div class="col col-12 col-lg-4">
                     <div class="card text-center m-3">
                         <fieldset>
                             <legend>{{question.spanish}}</legend>
