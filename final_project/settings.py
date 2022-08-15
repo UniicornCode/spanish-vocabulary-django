@@ -31,7 +31,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '0.0.0.0',
     'spanish-vocabulary-django.herokuapp.com',  # my herokuapp url
-    '127.0.0.1'
+    '127.0.0.1',
+    '*'
 ]
 
 # Application definition
@@ -54,8 +55,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'final_project.urls'
 
 TEMPLATES = [
@@ -89,6 +92,9 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -132,5 +138,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
