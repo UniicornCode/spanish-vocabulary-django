@@ -9,9 +9,10 @@
 {% block content %}
 <div class="container py-4">
     <div class="display-3 fw-bold text-center mb-5">Посети ја Шпанија</div>
-    <div class="row my-1">
-        <div class="col mb-3 d-flex align-items-center justify-content-center flex-column">
-            <div class="display-6 mb-3 fw-bold">
+
+    <div class="row">
+        <div class="col col-12 col-md-6 mb-3 d-flex align-items-center justify-content-center flex-column">
+            <div class="display-6 mb-3 fw-bold text-center">
                 {{ cities.0.name }}
             </div>
             <div class="fs-6 ">
@@ -30,25 +31,17 @@
                     никогаш да не заврши", и скоро да е без крај затоа што сега продолжува до пристаништето.</p>
             </div>
         </div>
-        <div class="col mb-3 align-items-center d-flex">
+        <div class="col col-12 col-md-6 mb-3 align-items-center d-flex">
             <div class="ratio ratio-16x9">
                 <img src="{{STATIC_URL}}{{cities.0.image.url}}" alt="Image of Barcelona"
                      class="img-fluid rounded" style="object-fit: cover;">
             </div>
         </div>
-    </div>
-    <div class="row my-1">
-        <div class="col mb-3  align-items-center d-flex">
-            <div class="ratio ratio-16x9">
-                <img src="{{STATIC_URL}}{{cities.1.image.url}}" alt="Image of Seville"
-                     class="img-fluid rounded" style="object-fit: cover;">
-            </div>
-        </div>
-        <div class="col mb-3 d-flex align-items-center justify-content-center flex-column">
+        <div class="col col-12 col-md-6 mb-3 d-flex align-items-center justify-content-center flex-column order-0 order-md-1">
             <div class="display-6 mb-3 fw-bold">
                 {{ cities.1.name }}
             </div>
-            <div class="fs-6 ">
+            <div class="fs-6">
                 <p><b>Севиља</b>, англиски Севиља антички Хиспалис, Град (поп., 2008 г.: град, 690.160), главен град
                     на провинцијата Севиља и автономната заедница Андалузија (comunidad autónoma), Шпанија. </p>
                 <p>Топ три места кои мора да ги посетите во Севиља: </p>
@@ -65,9 +58,13 @@
                     целиот ренесансен стил на традиционалната шпанска архитектура ќе ве воодушеви.</p>
             </div>
         </div>
-    </div>
-    <div class="row my-1">
-        <div class="col mb-3 d-flex align-items-center justify-content-center flex-column">
+        <div class="col col-12 col-md-6 mb-3 order-0 order-md-0 align-items-center d-flex">
+            <div class="ratio ratio-16x9">
+                <img src="{{STATIC_URL}}{{cities.1.image.url}}" alt="Image of Seville"
+                     class="img-fluid rounded" style="object-fit: cover;">
+            </div>
+        </div>
+        <div class="col col-12 col-md-6 mb-3 d-flex align-items-center justify-content-center flex-column order-md-1">
             <div class="display-6 mb-3 fw-bold">
                 {{ cities.2.name }}
             </div>
@@ -89,7 +86,7 @@
                     море и златниот песок, посетете што повеќе плажи на островот.</p>
             </div>
         </div>
-        <div class="col mb-3 align-items-center d-flex">
+        <div class="col col-12 col-md-6 mb-3 align-items-center order-md-1 d-flex">
             <div class="ratio ratio-16x9">
                 <img src="{{STATIC_URL}}{{cities.2.image.url}}" alt="Image of Palma de Mallorca"
                      class="img-fluid rounded" style="object-fit: cover;">
